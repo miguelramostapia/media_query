@@ -24,9 +24,15 @@
     padding: 5px;
     color: white;
 }
+.nav_section > ul{
+    display: none;
+}
 .nav_section > .mini_head{
     display: flex;
     gap: 5px;
+}
+.nav_section > .otro_head{
+    display: none;
 }
 .nav_section > .mini_head, .logo, .menu{
     width: 25px;
@@ -50,7 +56,7 @@
     flex-direction: column;
     align-items: center;
     padding: 15px;
-    
+
 }
 .main_section > .card_container{
     display: flex;
@@ -100,4 +106,42 @@
 }
 .footer_section > .logo{
     width: 25px;
+}
+
+@media (min-width: 576px){
+    .nav_section{
+        background-color: brown;
+    }
+    .container{
+        grid-template-areas:
+            "nav filters"
+            "nav main"
+            "footer main"
+        ;
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: 60px 1fr 60px;
+    }
+    .main_section > .card_container{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .nav_section{
+        flex-direction: column;
+        justify-content: start;
+        gap: 35px;
+        padding: 15px;
+    }
+    .nav_section > ul{
+        list-style: none;
+        display: block;
+    }
+    .nav_section >  .menu{
+        display: none;
+    }
+    .nav_section > .mini_head{
+        display: none;
+    }
+    .nav_section > .otro_head{
+        display: block;
+    }
 }
